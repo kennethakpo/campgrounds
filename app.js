@@ -19,8 +19,8 @@ var campgroundRoutes = require("./routes/campgrounds"),
 
 app.locals.moment = require("moment");
 
-//mongoose.connect("mongodb://localhost/yelp_camp");
-mongoose.connect("mongodb://kenneth:kenneth@ds155634.mlab.com:55634/akpos_yelpcamp");
+mongoose.connect(process.env.DATABASEURL);
+//mongoose.connect("mongodb://kenneth:kenneth@ds155634.mlab.com:55634/akpos_yelpcamp");
 
 app.use(methodOverride("_method"));
 app.use(bodyParser.urlencoded({extended: true}));
